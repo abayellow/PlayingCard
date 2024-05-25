@@ -23,6 +23,11 @@
                                     <constraint firstAttribute="width" secondItem="8uN-T9-XI3" secondAttribute="height" multiplier="5:8" id="JnQ-b1-Chp"/>
                                     <constraint firstAttribute="width" priority="750" constant="800" id="seM-TV-d2U"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rank">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,6 +41,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8uN-T9-XI3" secondAttribute="trailing" constant="16" id="tSO-03-WOy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playingCardView" destination="8uN-T9-XI3" id="obw-XC-8f0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
