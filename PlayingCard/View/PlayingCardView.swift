@@ -24,6 +24,31 @@ class PlayingCardView: UIView {
     private var cornerString: NSAttributedString {
         return centeredAttributedString(rankString + "\n"+suit, fontSize: cornerFontSize)
     }
+    
+    private lazy var upperLeftCornnerLabel: UILabel = createCornerLabel()
+    private lazy var lowerRightCornerLabel: UILabel = createCornerLabel()
+    
+    private func createCornerLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        addSubview(label)
+        return label
+    }
+    
+    private func configureCornerLabel(_ label: UILabel) {
+        label.attributedText = cornerString
+        label.frame.size = CGSize.zero
+        label.sizeToFit()
+        label.isHidden = !isFaceUo
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        
+        configureCornerLabel(upperLeftCornnerLabel)
+        upperLeftCornnerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
+    }
  
     override func draw(_ rect: CGRect) {
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
