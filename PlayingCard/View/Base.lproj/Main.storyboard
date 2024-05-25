@@ -19,6 +19,7 @@
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-T9-XI3" customClass="PlayingCardView" customModule="PlayingCard" customModuleProvider="target">
                                 <rect key="frame" x="16" y="59" width="343" height="549"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8uN-T9-XI3" secondAttribute="height" multiplier="5:8" id="JnQ-b1-Chp"/>
                                     <constraint firstAttribute="width" priority="750" constant="800" id="seM-TV-d2U"/>
@@ -28,6 +29,9 @@
                                         <integer key="value" value="11"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="844-xS-z6f" appends="YES" id="C7q-Kp-qtJ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,8 +50,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="844-xS-z6f">
+                    <connections>
+                        <action selector="flipCard:" destination="BYZ-38-t0r" id="2xG-h5-Uxv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-746.39999999999998" y="-9.4452773613193415"/>
+            <point key="canvasLocation" x="-1158" y="3"/>
         </scene>
     </scenes>
     <resources>
